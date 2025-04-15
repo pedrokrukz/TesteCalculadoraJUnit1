@@ -1,0 +1,31 @@
+import javax.swing.JOptionPane;
+
+public class Principal {
+    public static void main(String[] args) {
+        String opcao = "";
+        Calculadora calculadora = new Calculadora(); // Corrigido nome da variável
+
+        while (!opcao.equals("9")) {
+            opcao = JOptionPane.showInputDialog("""
+                                                1 - Leitura
+                                                2 - Adição
+                                                3 - Subtração
+                                                4 - Multiplicacação
+                                                5 - Divisão
+                                                9 - Sair;
+
+            switch (opção) {
+                case "1" -> {
+                    calculadora.setValorA(Double.parseDouble(JOptionPane.showInputDialog("Digite o valor A")));
+                    calculadora.setValorB(Double.parseDouble(JOptionPane.showInputDialog("Digite o valor B")));
+                }
+                case "2" -> JOptionPane.showMessageDialog(null, "Soma: " + calculadora.getSoma());
+                case "3" -> JOptionPane.showMessageDialog(null, "Diferença: " + calculadora.getDiferenca());
+                case "4" -> JOptionPane.showMessageDialog(null, "Produto: " + calculadora.getProduto());
+                case "5" -> JOptionPane.showMessageDialog(null, "Quociente: " + calculadora.getQuociente());
+                case "9" -> JOptionPane.showMessageDialog(null, "Encerrando o programa...");
+                default -> JOptionPane.showMessageDialog(null, "Opção incorreta!");
+            }
+        }
+    }
+}
