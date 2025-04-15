@@ -1,35 +1,49 @@
-public class Calculadora1 {
- private double valorA;
-  private double valorB;
-   public Calculadora() {
-     this(0,0);
-}
-     public Calculadora(double valorA, double valorB) {
-      setValorA(valorA);
-       setValorB(valorB);
-}
+
+public final class Calculadora1 {
+    private double valorA;
+    private double valorB;
+
+    public Calculadora1() {
+        this(0, 0);
+    }
+
+    public Calculadora1(double valorA, double valorB) {
+        setValorA(valorA);
+        setValorB(valorB);
+    }
+
     public double getValorA() {
-     return valorA;
-}
+        return valorA;
+    }
+
     public double getValorB() {
-     return valorB;
-}
+        return valorB;
+    }
+
     public void setValorA(double valorA) {
-     this.valorA = valorA;
-}
+        this.valorA = valorA;
+    }
+
     public void setValorB(double valorB) {
-     this.valorB = valorB;
-}
+        this.valorB = valorB;
+    }
+
     public double getSoma() {
-     return (getValorA() + getValorB());
-}
+        return valorA + valorB;
+    }
+
     public double getDiferenca() {
-     return (getValorA() - getValorB());
-}
+        return valorA - valorB;
+    }
+
     public double getProduto() {
-     return (getValorA() * getValorB());
-}
+        return valorA * valorB;
+    }
+
     public double getQuociente() {
-     return (getValorA() / getValorB());
-}
+        if (valorB == 0) {
+            throw new ArithmeticException("Divisão por zero!");
+        }
+        return valorA / valorB;
+    }
 }
